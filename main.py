@@ -10,8 +10,8 @@ class Product:
         self.weight = weight
         self.category = category
 
-    def __str__(self, name, weight, category):
-        f'{name},{weight},{category}'
+    def __str__(self):
+        return f'{self.name} {self.weight} {self.category}'
 
 
 class Shop:
@@ -23,7 +23,7 @@ class Shop:
         file.close()
 
     def add(self ,*products):
-        file = open(__file_name, 'a')
+        file = open(self._Shop__file_name, 'a')
 
         if products.lower() in self.__file_name:
             file.write(products)
