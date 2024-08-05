@@ -11,20 +11,24 @@ class Product:
         self.category = category
 
     def __str__(self, name, weight, category):
-        return print(f'{name},{weight},{category}')
+        f'{name},{weight},{category}'
 
 
 class Shop:
     __file_name = 'products.txt'
 
-    def get_products(self):
+    def get_products(self, __file_name=None):
         file = open(__file_name, 'r')
-        pprint(file.read())
+        file.read()
         file.close()
 
-    def add(self, *products):
+    def add(self, __file_name=None, *products):
         file = open(__file_name, 'a')
-        file.write(products)
+
+        if products.lower() in self.__file_name:
+            file.write(products)
+        else:
+            print(f'Продукт {product} уже есть в магазине')
         file.close()
 
 
