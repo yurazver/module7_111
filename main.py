@@ -17,12 +17,12 @@ class Product:
 class Shop:
     __file_name = 'products.txt'
 
-    def get_products(self, __file_name=None):
+    def get_products(self):
         file = open(__file_name, 'r')
         file.read()
         file.close()
 
-    def add(self, __file_name=None, *products):
+    def add(self ,*products):
         file = open(__file_name, 'a')
 
         if products.lower() in self.__file_name:
